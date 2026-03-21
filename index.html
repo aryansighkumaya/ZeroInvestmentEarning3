@@ -49,6 +49,17 @@ src="https://www.facebook.com/tr?id=1883086408993431&ev=PageView&noscript=1"
     
 </head>
 <body class="bg-black text-gray-200 min-h-screen text-xs">
+
+    <div id="audioConfirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-gray-900 p-8 rounded-lg text-center">
+        <h2 class="text-xl font-bold mb-4">Have you listened to the audios completely?</h2>
+        <div class="flex justify-center space-x-4">
+            <button onclick="handleYes()" class="bg-green-500 text-white px-4 py-2 rounded-md">Yes</button>
+            <button onclick="handleNo()" class="bg-red-500 text-white px-4 py-2 rounded-md">No</button>
+        </div>
+    </div>
+</div>
+
     <header class="bg-[#484752] text-white text-center py-2 shadow-md">
         <div class="text-xl font-bold">Join Now & Earn ₹1000+ Daily Without Investment!💸</div>
     </header>
@@ -197,19 +208,7 @@ src="https://www.facebook.com/tr?id=1883086408993431&ev=PageView&noscript=1"
         })(window, document, "clarity", "script", "qhh4f4x23x");
     </script>
 
-</head>
 
-<!-- Modal for the question -->
-<div id="audioConfirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-gray-900 p-8 rounded-lg text-center">
-        <h2 class="text-xl font-bold mb-4">Have you listened to the audios completely?</h2>
-        <div class="flex justify-center space-x-4">
-            <button onclick="handleYes()" class="bg-green-500 text-white px-4 py-2 rounded-md">Yes</button>
-            <button onclick="handleNo()" class="bg-red-500 text-white px-4 py-2 rounded-md">No</button>
-        </div>
-    </div>
-</div>
-<body>
     
 
     <script>
@@ -222,18 +221,15 @@ src="https://www.facebook.com/tr?id=1883086408993431&ev=PageView&noscript=1"
 
 
         // Function to handle "Yes" button click
-        function handleYes() {
+       function handleYes() {
+    const modal = document.getElementById('audioConfirmationModal');
 
-//   fbq('track', 'Lead', 
-//   { value: 0.00, currency: 'INR' });
+    if (modal) {
+        modal.classList.add('hidden');
+    }
 
-            window.location.href = "https://api.whatsapp.com/send?phone=919286079436"
-//"https://t.me/Rahela_04";
-           
-            const modal = document.getElementById('audioConfirmationModal');
-            modal.classListadd('hidden');
-        }
-
+    window.location.href = "https://api.whatsapp.com/send?phone=919286079436";
+}
       
     
 
